@@ -113,8 +113,14 @@ function Navbar() {
               </s.AvatarContainerOnLargeScreen>
             ) : (
               <>
-                <s.LoginBtnOnLargeScreen>Log in</s.LoginBtnOnLargeScreen>
-                <s.RegisterBtnOnLargeScreen>Sign up</s.RegisterBtnOnLargeScreen>
+                <Link href="/login">
+                  <s.LoginBtnOnLargeScreen>Log in</s.LoginBtnOnLargeScreen>
+                </Link>
+                <Link href="/register">
+                  <s.RegisterBtnOnLargeScreen>
+                    Sign up
+                  </s.RegisterBtnOnLargeScreen>
+                </Link>
               </>
             )}
           </s.UserAuthWrapper>

@@ -13,7 +13,7 @@ export const Container = styled.nav`
   position: sticky;
   top: 0;
   z-index: 45;
-  background: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.boxShadow.md};
 `;
 
@@ -150,7 +150,7 @@ export const UserAvatar = styled(Image)`
  ****** Middle Navbar start**************************
  ****************************************************/
 export const MiddleNav = styled.div`
-  @media (min-width: ${({ theme }) => theme.device.xs}) {
+  @media (min-width: ${({ theme }) => theme.device.s}) {
     display: none;
   }
 
@@ -227,7 +227,7 @@ export const FavoriteIcon = styled(MdFavoriteBorder)`
 `;
 
 export const UserAuthWrapper = styled.div`
-  @media (min-width: ${({ theme }) => theme.device.xs}) {
+  @media (min-width: ${({ theme }) => theme.device.s}) {
     display: none;
   }
 
