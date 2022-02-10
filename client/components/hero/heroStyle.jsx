@@ -8,6 +8,7 @@ import Link from "next/link";
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.gray_100};
   height: 70%;
+  margin-top: 4rem;
 `;
 
 export const Wrapper = styled.div`
@@ -36,6 +37,7 @@ export const RightHero = styled.div`
     align-items: flex-start;
   }
 `;
+
 export const Heading = styled.h1`
   font-size: 1.5rem;
 
@@ -47,12 +49,13 @@ export const Heading = styled.h1`
     font-size: 3rem;
   }
 `;
+
 export const Paragraph = styled.p`
-  margin: 0.75rem 0;
+  margin: 0.75rem 0 1.3rem 0;
 
   @media (min-width: ${({ theme }) => theme.device.md}) {
     font-size: 1.35rem;
-    margin: 0.75rem 1.5rem 0.75rem 0;
+    margin: 0.75rem 2rem 1.5rem 0;
   }
 `;
 
@@ -79,4 +82,5 @@ export const LeftHero = styled.div`
     display: block;
   }
 `;
+
 export const HeroImage = styled(Image)``;

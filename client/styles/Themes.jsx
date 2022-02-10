@@ -15,12 +15,26 @@ export const theme = {
     blue_800: "#1e40af",
     blue_900: "#1e3a8a",
 
+    //yellow colors
+    yellow_50: "#fffbeb",
+    yellow_100: "#fef9c3",
+    yellow_200: "#fef08a",
+    yellow_300: "#fde047",
+    yellow_400: "#facc15",
+    yellow_500: "#eab308",
+    yellow_600: "#ca8a04",
+
     //danger colors
-    danger_50: "#fef2f2",
-    danger_100: "#fee2e2",
-    danger_500: "#ef4444",
-    danger_800: "#991b1b",
-    danger_900: "#7f1d1d",
+    red_50: "#fef2f2",
+    red_100: "#fee2e2",
+    red_200: "#fecaca",
+    red_300: "#fca5a5",
+    red_400: "#f87171",
+    red_500: "#ef4444",
+    red_600: "#dc2626",
+    red_700: "#b91c1c",
+    red_800: "#991b1b",
+    red_900: "#7f1d1d",
 
     //success colors
     success_50: "#f0fdf4",
@@ -42,8 +56,8 @@ export const theme = {
   },
   //screen size
   device: {
-    s: "0px",
-    xs: "480px",
+    xs: "0px",
+    s: "480px",
     sm: "600px",
     md: "768px",
     lg: "1024px",
@@ -52,9 +66,9 @@ export const theme = {
   },
   boxShadow: {
     md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-    xl: "0px 10px 36px 0px rgba(0, 0, 0, 0.16), 0px 0px 0px 1px rgba(0, 0, 0, 0.06)",
-    xxl: "0px 14px 28px rgba(0, 0, 0, 0.25) , 0px 10px 10px rgba(0, 0, 0, 0.22)",
-    xxxl: " 0px 1px 3px 0px rgba(0, 0, 0, 0.02),  0px 0px 0px 1px rgba(27, 31, 35, 0.15)",
+    lg: "0px 10px 36px 0px rgba(0, 0, 0, 0.16), 0px 0px 0px 1px rgba(0, 0, 0, 0.06)",
+    xl: "0px 14px 28px rgba(0, 0, 0, 0.25) , 0px 10px 10px rgba(0, 0, 0, 0.22)",
+    xxl: " 0px 1px 3px 0px rgba(0, 0, 0, 0.02),  0px 0px 0px 1px rgba(27, 31, 35, 0.15)",
   },
   headingFont: "'Modern Antiqua', cursive",
   bodyFont: "'Poppins', sans-serif",

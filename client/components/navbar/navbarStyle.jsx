@@ -10,7 +10,8 @@ import {
 
 export const Container = styled.nav`
   padding: 1.1rem 1.5rem;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 45;
   background-color: ${({ theme }) => theme.colors.white};
@@ -150,7 +151,7 @@ export const UserAvatar = styled(Image)`
  ****** Middle Navbar start**************************
  ****************************************************/
 export const MiddleNav = styled.div`
-  @media (min-width: ${({ theme }) => theme.device.s}) {
+  @media (min-width: ${({ theme }) => theme.device.xs}) {
     display: none;
   }
 
@@ -227,7 +228,7 @@ export const FavoriteIcon = styled(MdFavoriteBorder)`
 `;
 
 export const UserAuthWrapper = styled.div`
-  @media (min-width: ${({ theme }) => theme.device.s}) {
+  @media (min-width: ${({ theme }) => theme.device.xs}) {
     display: none;
   }
 
