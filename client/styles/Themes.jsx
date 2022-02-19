@@ -53,7 +53,29 @@ export const theme = {
     gray_700: "#374151",
     gray_800: "#1f2937",
     gray_900: "#111827",
+
+    //zinc color
+    zinc_50: "#fafafa",
+    zinc_100: "#f4f4f5",
+    zinc_200: "#e4e4e7",
+    zinc_300: "#d4d4d8",
+    zinc_400: "#a1a1aa",
+    zinc_500: "#71717a",
+    zinc_600: "#52525b",
+    zinc_700: "#3f3f46",
+    zinc_800: "#27272a",
+    zinc_900: "#18181b",
+
+    //amber color
+    amber_300: "#fcd34d",
+    amber_400: "#fbbf24",
+    amber_500: "#f59e0b",
+    amber_600: "#d97706",
+
+    //Orange color
+    orange_200: "#fed7aa",
   },
+
   //screen size
   device: {
     xs: "0px",
@@ -62,7 +84,7 @@ export const theme = {
     md: "768px",
     lg: "1024px",
     xl: "1280px",
-    "2xl": "1536px",
+    xxl: "1380px",
   },
   boxShadow: {
     md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",

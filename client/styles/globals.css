@@ -9,7 +9,7 @@ body {
 a {
   color: inherit;
   text-decoration: underline;
-  
+  border: solid #fffffff1;
 }
 
 * {
