@@ -8,6 +8,9 @@ import {
   MdFavoriteBorder,
 } from "react-icons/md";
 
+/* ********************************************
+ ******  Navbar Container start ***************
+ **********************************************/
 export const Container = styled.nav`
   padding: 1.1rem 1.5rem;
   position: fixed;
@@ -40,7 +43,8 @@ export const LeftNav = styled.div`
 
 export const MenuIcon = styled(MdMenu)`
   cursor: pointer;
-  font-size: 1.5rem;
+
+  font-size: 1.3rem;
   line-height: 2rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -53,7 +57,7 @@ export const MenuIcon = styled(MdMenu)`
 
 export const CloseIcon = styled(MdClose)`
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -194,7 +198,7 @@ export const RightNav = styled.div`
 `;
 
 export const RightUl = styled.ul`
-  font-size: 1.3rem;
+  font-size: 0.85rem;
 
   @media (min-width: ${({ theme }) => theme.device.lg}) {
     display: flex;
@@ -213,18 +217,26 @@ export const RightLi = styled.li`
   }
 
   @media (min-width: ${({ theme }) => theme.device.lg}) {
-    margin: 0 0.75rem;
+    margin: 0 0.5rem;
   }
 `;
 
 export const RightALink = styled.a``;
 
 export const ShoppingCartIcon = styled(MdOutlineShoppingCart)`
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+
+  @media (min-width: ${({ theme }) => theme.device.lg}) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const FavoriteIcon = styled(MdFavoriteBorder)`
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+
+  @media (min-width: ${({ theme }) => theme.device.lg}) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const UserAuthWrapper = styled.div`

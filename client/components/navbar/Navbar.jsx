@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import * as s from "./navbarStyle";
 import Link from "next/link";
 
-const authenticated = true;
+const authenticated = false;
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
