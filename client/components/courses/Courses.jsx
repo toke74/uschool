@@ -15,7 +15,7 @@ import {
   ExploreButton,
 } from "./coursesStyle";
 import SingleCourse from "./singleCourse/SingleCourse";
-import { coursesItem } from "../util/data/data";
+import { coursesItem } from "../../util/data/data";
 
 const courseByCategory = (category) => {
   const courseCategory = coursesItem.filter(
@@ -35,7 +35,8 @@ const Courses = () => {
       <TopSection>
         <TopHeading> A broad selection of courses</TopHeading>
         <TopParagraph>
-          Choose from 183,000 online video courses with new additions published every month Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.
+          Choose from 183,000 online video courses with new additions published
+          every month Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.
         </TopParagraph>
 
         {/*List of Course Category */}

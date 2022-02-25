@@ -12,10 +12,10 @@ import {
   NotRegisterLink,
   Error,
 } from "./loginStyle";
-import FormInput from "../../components/util/form/formInput/FormInput";
-import Button from "../../components/util/form/Button/Button";
-import useForm from "../../components/util/hooks/useForm";
-import validate from "../../components/util/validation/ValidationRules";
+import FormInput from "../../util/form/formInput/FormInput";
+import Button from "../../util/form/Button/Button";
+import useForm from "../../hooks/useForm";
+import validate from "../../util/validation/ValidationRules";
 
 const Login = () => {
   const { values, errors, handleChange, handleSubmit } = useForm(
