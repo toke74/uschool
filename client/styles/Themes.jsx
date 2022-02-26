@@ -23,6 +23,9 @@ export const theme = {
     yellow_400: "#facc15",
     yellow_500: "#eab308",
     yellow_600: "#ca8a04",
+    yellow_700: "#a16207",
+    yellow_800: "#854d0e",
+    yellow_900: "#713f12",
 
     //danger colors
     red_50: "#fef2f2",
@@ -36,12 +39,29 @@ export const theme = {
     red_800: "#991b1b",
     red_900: "#7f1d1d",
 
-    //success colors
-    success_50: "#f0fdf4",
-    success_100: "#dcfce7",
-    success_500: "#22c55e",
-    success_800: "#166534",
-    success_900: "#14532d",
+    //green colors
+    green_50: "#f0fdf4",
+    green_100: "#dcfce7",
+    green_200: "#bbf7d0",
+    green_300: "#86efac",
+    green_400: "#4ade80",
+    green_500: "#22c55e",
+    green_600: "#16a34a",
+    green_700: "#15803d",
+    green_800: "#166534",
+    green_900: "#14532d",
+
+    //indigo colors
+    indigo_50: "#eef2ff",
+    indigo_100: "#e0e7ff",
+    indigo_200: "#c7d2fe",
+    indigo_300: "#a5b4fc",
+    indigo_400: "#818cf8",
+    indigo_500: "#6366f1",
+    indigo_600: "#4f46e5",
+    indigo_700: "#4338ca",
+    indigo_800: "#3730a3",
+    indigo_900: "#312e81",
 
     //gray color
     gray_100: "#f3f4f6",

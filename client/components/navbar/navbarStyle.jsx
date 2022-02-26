@@ -203,7 +203,7 @@ export const RightUl = styled.ul`
   @media (min-width: ${({ theme }) => theme.device.lg}) {
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -227,7 +227,7 @@ export const ShoppingCartIcon = styled(MdOutlineShoppingCart)`
   font-size: 1.1rem;
 
   @media (min-width: ${({ theme }) => theme.device.lg}) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -235,7 +235,7 @@ export const FavoriteIcon = styled(MdFavoriteBorder)`
   font-size: 1.1rem;
 
   @media (min-width: ${({ theme }) => theme.device.lg}) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 `;
 

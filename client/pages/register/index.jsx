@@ -17,8 +17,10 @@ import FormInput from "../../util/form/formInput/FormInput";
 import Button from "../../util/form/Button/Button";
 import useForm from "../../hooks/useForm";
 import validate from "../../util/validation/ValidationRules";
+import { useToast } from "../../hooks/useToast";
 
 const Register = () => {
+  const toast = useToast();
   const { values, errors, handleChange, handleSubmit } = useForm(
     onSubmitRegister,
     validate
@@ -30,6 +32,7 @@ const Register = () => {
       email: values.email,
       password: values.password,
     };
+    toast("warning", "Lorem ipsum dolor sit amet consectetur ");
     console.log(data);
   }
 
