@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { coursesItem } from "../../components/util/data/data";
+import { coursesItem } from "../../util/data/data";
 import CourseHeader from "../../components/courses/courseDetails/courseHeader/CourseHeader";
 import CourseRightBar from "../../components/courses/courseDetails/courseRightBar/CourseRightBar";
 import CourseContent from "../../components/courses/courseDetails/courseContent/CourseContent";

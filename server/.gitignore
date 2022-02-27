@@ -1,0 +1,6 @@
+# dependencies
+/node_modules
+
+# config file 
+/config
+/config/config.env

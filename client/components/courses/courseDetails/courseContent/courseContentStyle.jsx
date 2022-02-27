@@ -143,7 +143,7 @@ export const CourseContentTitleListItem = styled.li`
 export const ArrowDownIcon = styled(MdOutlineKeyboardArrowDown)`
   font-size: 1.125rem;
   margin-right: 0.5rem;
-  display: ${({ isVisable }) => (isVisable ? "none" : "block")};
+  display: ${({ isvisable }) => (isvisable == "visable" ? "none" : "block")};
 
   @media (min-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.25rem;
@@ -153,7 +153,7 @@ export const ArrowDownIcon = styled(MdOutlineKeyboardArrowDown)`
 export const ArrowUpIcon = styled(MdOutlineKeyboardArrowUp)`
   font-size: 1.125rem;
   margin-right: 0.5rem;
-  display: ${({ isVisable }) => (isVisable ? "block" : "none")};
+  display: ${({ isvisable }) => (isvisable == "visable" ? "block" : "none")};
 
   @media (min-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.25rem;
@@ -190,7 +190,7 @@ export const CourseContentLists = styled.ul``;
 export const CourseContentListItem = styled.li`
   font-size: 0.6rem;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  display: ${({ isVisable }) => (isVisable ? "flex" : "none")};
+  display: ${({ isvisable }) => (isvisable == "visable" ? "flex" : "none")};
 
   &:last-child {
     padding-bottom: 0.75rem;

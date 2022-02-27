@@ -45,7 +45,7 @@ const Register = () => {
       </HeaderContainer>
 
       {/* Register Form */}
-      <Form onSubmit={handleSubmit} noValidate>
+      <Form onSubmit={handleSubmit} autocomplete="off" noValidate>
         <FormInput
           type="text"
           placeholder="Full Name"

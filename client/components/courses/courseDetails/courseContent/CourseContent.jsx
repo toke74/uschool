@@ -119,10 +119,14 @@ const CourseContent = ({ singleCourse }) => {
                     }}
                   >
                     <ArrowDownIcon
-                      isVisable={openCollapse && openTab === cc.id}
+                      isvisable={
+                        openCollapse && openTab === cc.id ? "visable" : ""
+                      }
                     />
                     <ArrowUpIcon
-                      isVisable={openCollapse && openTab === cc.id}
+                      isvisable={
+                        openCollapse && openTab === cc.id ? "visable" : ""
+                      }
                     />
                     <TitleListItem>{cc.title}</TitleListItem>
                     <TotalLecturesTime>
@@ -135,7 +139,9 @@ const CourseContent = ({ singleCourse }) => {
                     {cc.specficCourses.map((spc) => (
                       <CourseContentListItem
                         key={spc.cid}
-                        isVisable={openCollapse && openTab === cc.id}
+                        isvisable={
+                          openCollapse && openTab === cc.id ? "visable" : ""
+                        }
                       >
                         <PlayCircle />
                         <SpecficCourseTitle>

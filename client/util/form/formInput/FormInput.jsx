@@ -43,6 +43,7 @@ const FormInput = ({ type, placeholder, value, onChange, Icon, ...props }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        autocomplete="off"
       />
     </Container>
   );

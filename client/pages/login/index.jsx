@@ -37,7 +37,7 @@ const Login = () => {
       </HeaderContainer>
 
       {/* Login Form */}
-      <Form onSubmit={handleSubmit} noValidate>
+      <Form onSubmit={handleSubmit} autocomplete="off" noValidate>
         <FormInput
           type="email"
           placeholder="Email"

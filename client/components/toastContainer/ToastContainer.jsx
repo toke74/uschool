@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 
 export default function ToastContainer(props) {
   const [state, dispatch] = useAppState();
-  console.log(props);
   return (
     <Container>
       <Wrapper>
