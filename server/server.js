@@ -3,7 +3,7 @@ import cors from "cors";
 const morgan = require("morgan");
 
 //Load env vars
-require("dotenv").config({ path: "./config/config.env"});
+require("dotenv").config({ path: "./config/config.env" });
 
 // create express app
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // route
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("you hit server endpoint");
 });
 
