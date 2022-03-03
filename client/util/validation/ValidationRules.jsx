@@ -4,10 +4,19 @@ export default function validate(values) {
   const regEmail = /\S+@\S+\.\S+/;
 
   //validate name
-  if (!values.name) {
-    errors.name = "Name  is required, min 2  and max  40 characters";
-  } else if (!regName.test(values.name)) {
-    errors.name = "Name is invalid";
+  if (!values.fName) {
+    errors.fName = "First name  is required, min 2  and max  40 characters";
+  } else if (!regName.test(values.fName)) {
+    errors.fName = "First name is invalid";
+  }
+
+  //validate name
+  if (!values.lName) {
+    errors.lName = "Last name  is required, min 2  and max  40 characters";
+  } else if (!regName.test(values.lName)) {
+    errors.lName = "Last name is invalid";
+  } else if (values.fName === values.lName) {
+    errors.lName = "Your last name is  same as your first name";
   }
 
   //validate email

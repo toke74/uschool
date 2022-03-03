@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { useState } from "react";
 import { MdEmail, MdLock } from "react-icons/md";
+import { ImSpinner6 } from "react-icons/im";
 import {
   Container,
   HeaderContainer,
@@ -11,13 +13,15 @@ import {
   NotRegister,
   NotRegisterLink,
   Error,
+  Button,
 } from "./loginStyle";
 import FormInput from "../../util/form/formInput/FormInput";
-import Button from "../../util/form/Button/Button";
+// import Button from "../../util/form/Button/Button";
 import useForm from "../../hooks/useForm";
 import validate from "../../util/validation/ValidationRules";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   const { values, errors, handleChange, handleSubmit } = useForm(
     onSubmitLogin,
     validate
@@ -59,8 +63,9 @@ const Login = () => {
           Icon={MdLock}
         />
         {errors.password && <Error>{errors.password}</Error>}
-
-        <Button type="submit" value="log In" />
+        <Button type="submit">
+          {loading ? <ImSpinner6 className="spinner" /> : "Log In"}
+        </Button>
       </Form>
 
       {/* Forgot Password and Don't have an account?  */}

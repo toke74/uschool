@@ -42,9 +42,7 @@ Uschool is open online course provider
 - If user saved in databse, send success mesaage and
 - Send email message to user to confirm thier email address and then redarict them to login page
 
-⭐
-
-  <!-- ![User Register!](/server/note/images/S1.png "user") -->
+  ![User Register!](/server/note/images/user_register.png "user")
 
 ### 3.2 Encrypt Password
 

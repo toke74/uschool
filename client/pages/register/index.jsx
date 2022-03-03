@@ -1,5 +1,8 @@
+import axios from "axios";
 import Link from "next/link";
+import { useState } from "react";
 import { MdPerson, MdEmail, MdLock } from "react-icons/md";
+import { ImSpinner6 } from "react-icons/im";
 import {
   Container,
   HeaderContainer,
@@ -7,6 +10,7 @@ import {
   Divider,
   Form,
   Error,
+  Button,
   BottomWrapper,
   TermOfUse,
   AlreadyRegister,
@@ -14,27 +18,37 @@ import {
   TermOfUseLink,
 } from "./registerStyle";
 import FormInput from "../../util/form/formInput/FormInput";
-import Button from "../../util/form/Button/Button";
+// import Button from "../../util/form/Button/Button";
 import useForm from "../../hooks/useForm";
 import validate from "../../util/validation/ValidationRules";
 import { useToast } from "../../hooks/useToast";
 
 const Register = () => {
   const toast = useToast();
+  const [loading, setLoading] = useState(false);
+
+  const onSubmitRegister = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post(`/api/register`, {
+        fName: values.fName,
+        lName: values.lName,
+        email: values.email,
+        password: values.password,
+      });
+
+      toast("success", "Registration successful. Please login.");
+      setLoading(false);
+    } catch (err) {
+      toast("error", err.response.data);
+      setLoading(false);
+    }
+  };
+
   const { values, errors, handleChange, handleSubmit } = useForm(
     onSubmitRegister,
     validate
   );
-
-  function onSubmitRegister() {
-    const data = {
-      name: values.name,
-      email: values.email,
-      password: values.password,
-    };
-    toast("warning", "Lorem ipsum dolor sit amet consectetur ");
-    console.log(data);
-  }
 
   return (
     <Container>
@@ -48,15 +62,27 @@ const Register = () => {
       <Form onSubmit={handleSubmit} autocomplete="off" noValidate>
         <FormInput
           type="text"
-          placeholder="Full Name"
-          name="name"
+          placeholder="First Name"
+          name="fName"
           onChange={handleChange}
-          value={values.name || ""}
+          value={values.fName || ""}
           required
           Icon={MdPerson}
         />
 
-        {errors.name && <Error>{errors.name}</Error>}
+        {errors.fName && <Error>{errors.fName}</Error>}
+
+        <FormInput
+          type="text"
+          placeholder="Last Name"
+          name="lName"
+          onChange={handleChange}
+          value={values.lName || ""}
+          required
+          Icon={MdPerson}
+        />
+
+        {errors.lName && <Error>{errors.lName}</Error>}
 
         <FormInput
           type="email"
@@ -94,9 +120,10 @@ const Register = () => {
 
         {errors.confirmPassword && <Error>{errors.confirmPassword}</Error>}
 
-        <Button type="submit" value="Sign up" />
+        <Button type="submit">
+          {loading ? <ImSpinner6 className="spinner" /> : "Sign up"}
+        </Button>
       </Form>
-
       {/* Terms of use and to login link */}
       <BottomWrapper>
         <TermOfUse>

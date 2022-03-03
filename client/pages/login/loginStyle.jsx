@@ -61,6 +61,37 @@ export const Error = styled.p`
   }
 `;
 
+export const Button = styled.button`
+  display: block;
+  padding: 0.4rem 0.75rem;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.blue_500};
+  border: 1px solid ${({ theme }) => theme.colors.blue_500};
+
+  @media (min-width: ${({ theme }) => theme.device.lg}) {
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .spinner {
+    color: white !important;
+    font-size: 1.2rem;
+    animation: spin infinite 3s linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 /***************************************************
  ****** Term of use and to login page **************
  ***************************************************/
