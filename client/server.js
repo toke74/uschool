@@ -14,7 +14,7 @@ app
     // apply proxy in dev mode
     if (dev) {
       server.use(
-        "/api",
+        "/api/v1",
         createProxyMiddleware({
           target: "http://localhost:8000",
           changeOrigin: true,

@@ -1,6 +1,10 @@
+import jwt from "jsonwebtoken";
 import User from "../models/User";
 import { hashPassword, comparePassword } from "../utils/auth";
 
+// @desc      Register user
+// @route     POST /api/v1/auth/register
+// @access    Public
 export const register = async (req, res) => {
   try {
     // console.log(req.body);
@@ -9,6 +13,8 @@ export const register = async (req, res) => {
     // validation
     if (!fName) return res.status(400).send("First name is required");
     if (!lName) return res.status(400).send("Last name is required");
+    if (!email) return res.status(400).send("email is required");
+
     if (!password || password.length < 6 || password.length > 64) {
       return res
         .status(400)
@@ -41,5 +47,49 @@ export const register = async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.status(400).send("Error. Try again.");
+  }
+};
+
+// @desc      Login user
+// @route     POST /api/v1/auth/login
+// @access    Public
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    //validating user data
+    if (!email) return res.status(400).send("Please provide an email");
+    if (!password) {
+      return res.status(400).send("Please provide  password");
+    }
+
+    // check if our db has user with that email
+    const user = await User.findOne({ email }).select("+password").exec();
+    if (!user) return res.status(401).send("Invalid credentials");
+
+    // Check if password matches
+    const isMatch = await comparePassword(password, user.password);
+
+    if (!isMatch) return res.status(401).send("Invalid credentials");
+
+    // create signed jwt
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRE,
+    });
+
+    // return user and token to client, exclude hashed password
+    user.password = undefined;
+
+    // send token in cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+      // secure: true, // only works on https
+    });
+
+    // send user as json response
+    res.json(user);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Server Error. Try again.");
   }
 };

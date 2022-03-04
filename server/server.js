@@ -20,7 +20,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //Mount routers
-readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
+readdirSync("./routes").map((r) =>
+  app.use("/api/v1", require(`./routes/${r}`))
+);
 
 //port
 const port = process.env.PORT || 5000;

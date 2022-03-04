@@ -18,9 +18,8 @@ import {
   TermOfUseLink,
 } from "./registerStyle";
 import FormInput from "../../util/form/formInput/FormInput";
-// import Button from "../../util/form/Button/Button";
 import useForm from "../../hooks/useForm";
-import validate from "../../util/validation/ValidationRules";
+import { registeValidate } from "../../util/validation/ValidationRules";
 import { useToast } from "../../hooks/useToast";
 
 const Register = () => {
@@ -30,7 +29,7 @@ const Register = () => {
   const onSubmitRegister = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/register`, {
+      const { data } = await axios.post(`/api/v1/auth/register`, {
         fName: values.fName,
         lName: values.lName,
         email: values.email,
@@ -47,7 +46,7 @@ const Register = () => {
 
   const { values, errors, handleChange, handleSubmit } = useForm(
     onSubmitRegister,
-    validate
+    registeValidate
   );
 
   return (
@@ -124,6 +123,7 @@ const Register = () => {
           {loading ? <ImSpinner6 className="spinner" /> : "Sign up"}
         </Button>
       </Form>
+
       {/* Terms of use and to login link */}
       <BottomWrapper>
         <TermOfUse>
