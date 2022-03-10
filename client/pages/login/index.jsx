@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
@@ -20,10 +21,15 @@ import FormInput from "../../util/form/formInput/FormInput";
 import useForm from "../../hooks/useForm";
 import { loginValidate } from "../../util/validation/ValidationRules";
 import { useToast } from "../../hooks/useToast";
+import { LOGIN } from "../../appState/actions/userActions";
+import { useRouter } from "next/router";
+import { useAppState } from "../../hooks/useAppState";
 
 const Login = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
+  const { state, dispatch } = useAppState();
+  const router = useRouter();
 
   const onSubmitLogin = async () => {
     try {
@@ -33,8 +39,16 @@ const Login = () => {
         password: values.password,
       });
 
-      toast("success", "Login successful.");
-      console.log(data);
+      dispatch({
+        type: LOGIN,
+        payload: data,
+      });
+
+      // save in local storage
+      window.localStorage.setItem("user", JSON.stringify(data));
+
+      // redirect
+      router.push("/");
 
       setLoading(false);
     } catch (err) {

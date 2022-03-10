@@ -8,12 +8,14 @@ import { theme } from "../styles/Themes";
 import GlobalStyles from "../styles/Global";
 import Navbar from "../components/navbar/Navbar";
 import ToastContainer from "../components/toastContainer/ToastContainer";
-import { AppStateProvider } from "../appState/contexts/appState";
+import { AppStateProvider } from "../appState/contexts/state";
 import { initialState, combineReducers } from "../appState/reducers";
 import toastReducer from "../appState/reducers/toastReducer";
+import userReducer from "../appState/reducers/userReducer";
 
 const appReducers = combineReducers({
   toast: toastReducer,
+  user: userReducer,
 });
 
 function MyApp({ Component, pageProps }) {

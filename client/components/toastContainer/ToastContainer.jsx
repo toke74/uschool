@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Toast from "./toast/Toast";
-import { useAppState } from "../../appState/contexts/appState";
+import { useAppState } from "../../hooks/useAppState";
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 export default function ToastContainer(props) {
-  const [state, dispatch] = useAppState();
+  const { state, dispatch } = useAppState();
   return (
     <Container>
       <Wrapper>

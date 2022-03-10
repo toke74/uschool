@@ -1,4 +1,4 @@
-import { useAppState } from "../../../appState/contexts/appState";
+import { useAppState } from "../../../hooks/useAppState";
 import { DELETE_TOAST } from "../../../appState/actions/toastAction";
 import SuccessToast from "./SuccessToast";
 import ErrorToast from "./ErrorToast";
@@ -7,7 +7,7 @@ import WarningToast from "./WarningToast";
 
 const Toast = (props) => {
   const { type, message, id } = props;
-  const [state, dispatch] = useAppState();
+  const { state, dispatch } = useAppState();
 
   return (
     <>

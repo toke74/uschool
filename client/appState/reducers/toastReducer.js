@@ -15,9 +15,7 @@ function toastReducer(state, action) {
         toast: updatedToasts,
       };
     }
-    default: {
-      throw new Error("unhandled action type");
-    }
+    default: return state;
   }
 }
 

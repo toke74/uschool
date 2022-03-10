@@ -1,5 +1,6 @@
 const initialState = {
   toast: [],
+  user: null,
 };
 
 const combineReducers = (reducers) => {
