@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
@@ -28,8 +28,16 @@ import { useAppState } from "../../hooks/useAppState";
 const Login = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
-  const { state, dispatch } = useAppState();
+  const {
+    state: { user },
+    dispatch,
+  } = useAppState();
+
   const router = useRouter();
+
+  useEffect(() => {
+    if (user !== null) router.push("/");
+  }, [user]);
 
   const onSubmitLogin = async () => {
     try {

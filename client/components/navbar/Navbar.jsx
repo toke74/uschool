@@ -1,12 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import * as s from "./navbarStyle";
 import Link from "next/link";
-
-const authenticated = false;
+import { useAppState } from "../../hooks/useAppState";
+import ProfileMenu from "../menus/ProfileMenu/ProfileMenu";
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [userMenu, setUserMenu] = useState(false);
   const ref = useRef();
+  const { state, dispatch } = useAppState();
+  const { user } = state;
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
@@ -19,6 +22,10 @@ function Navbar() {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, [navbarOpen]);
+
+  const userMenuHandler = () => {
+    setUserMenu(!userMenu);
+  };
 
   return (
     <s.Container ref={ref}>
@@ -41,14 +48,15 @@ function Navbar() {
           {/* On Small Screen */}
           <s.OnSmallScreen>
             <s.SearchOnSmallScreen />
-            {authenticated ? (
-              <s.AvatarContainerOnSmallScreen>
+            {user ? (
+              <s.AvatarContainerOnSmallScreen onClick={userMenuHandler}>
                 <s.UserAvatar
                   src="https://randomuser.me/api/portraits/women/91.jpg"
                   alt=""
                   width={33}
                   height={33}
                 />
+                <ProfileMenu userMenu={userMenu} dispatch={dispatch} />
               </s.AvatarContainerOnSmallScreen>
             ) : (
               <Link href="/login">
@@ -102,14 +110,15 @@ function Navbar() {
             </s.RightLi>
           </s.RightUl>
           <s.UserAuthWrapper>
-            {authenticated ? (
-              <s.AvatarContainerOnLargeScreen>
+            {user ? (
+              <s.AvatarContainerOnLargeScreen onClick={userMenuHandler}>
                 <s.UserAvatar
                   src="https://randomuser.me/api/portraits/women/91.jpg"
                   alt=""
                   width={33}
                   height={33}
                 />
+                <ProfileMenu userMenu={userMenu} dispatch={dispatch} />
               </s.AvatarContainerOnLargeScreen>
             ) : (
               <>

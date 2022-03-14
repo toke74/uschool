@@ -1,6 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdPerson, MdEmail, MdLock } from "react-icons/md";
 import { ImSpinner6 } from "react-icons/im";
 import {
@@ -21,10 +21,22 @@ import FormInput from "../../util/form/formInput/FormInput";
 import useForm from "../../hooks/useForm";
 import { registeValidate } from "../../util/validation/ValidationRules";
 import { useToast } from "../../hooks/useToast";
+import { useRouter } from "next/router";
+import { useAppState } from "../../hooks/useAppState";
 
 const Register = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
+  const {
+    state: { user },
+    dispatch,
+  } = useAppState();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user !== null) router.push("/");
+  }, [user]);
 
   const onSubmitRegister = async () => {
     try {

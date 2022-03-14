@@ -99,3 +99,15 @@ export const login = async (req, res) => {
     return res.status(500).send("Server Error. Try again.");
   }
 };
+
+// @desc      Logout user
+// @route     GET /api/v1/auth/logout
+// @access    Public
+export const logout = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.json({ message: "You signout successfully" });
+  } catch (err) {
+    console.log(err);
+  }
+};

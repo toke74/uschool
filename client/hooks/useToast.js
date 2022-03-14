@@ -2,7 +2,7 @@ import { useAppState } from "../hooks/useAppState";
 import { ADD_TOAST, DELETE_TOAST } from "../appState/actions/toastAction";
 
 export function useToast() {
-  const { state, dispatch } = useAppState();
+  const { dispatch } = useAppState();
 
   function toast(type, message) {
     const id = Math.random().toString(36).substr(2, 9);

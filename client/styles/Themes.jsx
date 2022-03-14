@@ -94,6 +94,9 @@ export const theme = {
 
     //Orange color
     orange_200: "#fed7aa",
+
+    //Slate color
+    slate_500: "#64748b",
   },
 
   //screen size
