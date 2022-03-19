@@ -109,3 +109,37 @@ the app state management stores the followibg
 
 - user state and
 - toast state
+
+## 5 Axios Interceptors for Expired Token
+
+An Interceptor can be understood as a filter of http requests and responses before they are actually sent or received.
+
+This allows us to manipulate the header, body, parameters of the requests sent to the server as well as check the responses received from the server for the most reasonable.
+
+We can intercept requests or responses before they are handled by then or catch.
+
+```JS
+– Request:
+
+axios.interceptors.request.use(
+  (config) => {
+    // Do something before request is sent
+    return config;
+  },
+  (error) => {
+    // Do something with request error
+    return Promise.reject(error);
+  });
+
+– Response:
+
+axios.interceptors.response.use(
+  (response) => { // Any status code from range of 2xx
+    // Do something with response data
+    return response;
+  },
+  (error) => { // Any status codes outside range of 2xx
+    // Do something with response error
+    return Promise.reject(error);
+  });
+```

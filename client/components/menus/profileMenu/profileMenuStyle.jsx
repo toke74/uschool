@@ -6,7 +6,6 @@ import {
   MdPowerSettingsNew,
   MdSettings,
   MdSchool,
-  MdOutlineAccountCircle,
   MdOutlineSchool,
   MdPayment,
 } from "react-icons/md";
@@ -23,7 +22,6 @@ export const Container = styled.div`
     top: 3.097rem;
     transform: rotate(45deg);
     background: ${({ theme }) => theme.colors.white};
-    /* box-shadow: ${({ theme }) => theme.boxShadow.xl}; */
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
       0 8px 10px -6px rgb(0 0 0 / 0.1);
     z-index: 10;
@@ -148,6 +146,7 @@ export const PaymentIcon = styled(MdPayment)`
     color: ${({ theme }) => theme.colors.blue_600};
   }
 `;
+
 export const PowerSettingsIcon = styled(MdPowerSettingsNew)`
   font-size: 1.25rem;
   margin-right: 1.75rem;

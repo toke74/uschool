@@ -80,7 +80,8 @@ export const login = async (req, res) => {
 
     // create signed jwt
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: process.env.JWT_EXPIRE,
+      expiresIn: 120,
+      // expiresIn: process.env.JWT_EXPIRE,
     });
 
     // return user and token to client, exclude hashed password
@@ -107,6 +108,19 @@ export const logout = async (req, res) => {
   try {
     res.clearCookie("token");
     return res.json({ message: "You signout successfully" });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// @desc      Get Current user
+// @route     GET /api/v1/auth/current-user
+// @access    Private
+export const currentUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password").exec();
+    console.log("CURRENT_USER", user);
+    return res.json(user);
   } catch (err) {
     console.log(err);
   }

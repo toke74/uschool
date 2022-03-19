@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ref } from 'react'
 import axios from "axios";
 import { useRouter } from "next/router";
 import {
@@ -33,7 +34,7 @@ const ProfileMenu = ({ userMenu, dispatch }) => {
   };
 
   return (
-    <Container userMenu={userMenu}>
+    <Container userMenu={userMenu} ref={ref}>
       <Wrapper>
         <MenuList>
           {/* User avatar item */}

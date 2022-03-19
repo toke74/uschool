@@ -16,12 +16,16 @@ function Navbar() {
       if (navbarOpen && ref.current && !ref.current.contains(e.target)) {
         setNavbarOpen(false);
       }
+      if (userMenu && ref.current && !ref.current.contains(e.target)) {
+        setUserMenu(false);
+      }
     };
+    
     document.addEventListener("mousedown", checkIfClickedOutside);
     return () => {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
-  }, [navbarOpen]);
+  }, [navbarOpen, userMenu]);
 
   const userMenuHandler = () => {
     setUserMenu(!userMenu);
