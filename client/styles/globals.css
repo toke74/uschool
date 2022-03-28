@@ -6,12 +6,21 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-  border: solid #fffffff1;
-}
-
 * {
   box-sizing: border-box;
+}
+
+.spinner {
+  color: white !important;
+  font-size: 1.2rem;
+  animation: spin infinite 3s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

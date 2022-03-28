@@ -48,7 +48,7 @@ const Register = () => {
         password: values.password,
       });
 
-      toast("success", "Registration successful. Please login.");
+      toast("success", data);
       setLoading(false);
     } catch (err) {
       toast("error", err.response.data);

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ref } from 'react'
+import { ref } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import {
@@ -9,6 +9,7 @@ import {
   MenuList,
   MenuListItem,
   MenuListLink,
+  DashboardIcon,
   OutlineSchoolIcon,
   PaymentIcon,
   PowerSettingsIcon,
@@ -53,6 +54,16 @@ const ProfileMenu = ({ userMenu, dispatch }) => {
           </MenuListItem>
 
           <Divider />
+
+          {/* Dashboard item */}
+          <MenuListItem>
+            <Link href="/user">
+              <MenuListLink>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </MenuListLink>
+            </Link>
+          </MenuListItem>
 
           {/* Learning item */}
           <MenuListItem>

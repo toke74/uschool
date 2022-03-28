@@ -27,8 +27,6 @@ function AppStateProvider({ reducer, initialState = {}, children }) {
     function (error) {
       let res = error.response;
 
-      console.log(res);
-
       if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
         return new Promise((resolve, reject) => {
           axios
@@ -52,7 +50,6 @@ function AppStateProvider({ reducer, initialState = {}, children }) {
   useEffect(() => {
     const getCsrfToken = async () => {
       const { data } = await axios.get("/api/v1/csrf-token");
-      console.log("CSRF", data);
       axios.defaults.headers["X-CSRF-Token"] = data.getCsrfToken;
     };
     getCsrfToken();

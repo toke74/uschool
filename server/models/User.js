@@ -41,6 +41,7 @@ const UserSchema = new mongoose.Schema(
     stripe_account_id: "",
     stripe_seller: {},
     stripeSession: {},
+    verified: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

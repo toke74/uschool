@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import {
+  MdOutlineDashboard,
   MdOutlineShoppingCart,
   MdFavoriteBorder,
   MdPowerSettingsNew,
@@ -87,6 +88,15 @@ export const UserAvatar = styled(Image)`
   }
 `;
 
+export const DashboardIcon = styled(MdOutlineDashboard)`
+  font-size: 1.25rem;
+  margin-right: 1.75rem;
+  color: ${({ theme }) => theme.colors.slate_500};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.blue_600};
+  }
+`;
 export const SchoolIcon = styled(MdSchool)`
   font-size: 1.25rem;
   margin-right: 1.75rem;
